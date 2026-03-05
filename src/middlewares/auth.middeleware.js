@@ -9,8 +9,18 @@ export const verifyJWT = (req, res, next) => {
             return res.status(400).json({ message: "Invalid or missing  Header" });
         }
 
+
+        console.log(
+            authHeader
+        );
+        
+
         const token = authHeader.split(" ")[1];
         //token = eydsnibvbnnib......
+
+
+        console.log(token);
+        
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
@@ -23,6 +33,7 @@ export const verifyJWT = (req, res, next) => {
         next();
 
     } catch (error) {
+        
         return res.status(401).json({ message: "Invalid  or expired token" });
     }
 }
