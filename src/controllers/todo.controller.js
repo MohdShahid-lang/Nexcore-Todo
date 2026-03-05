@@ -121,6 +121,10 @@ export const DeleteTodo = async (req, res) => {
    try {
       const { TodoId } = req.params;
 
+
+      console.log(TodoId);
+
+
       await todoModel.findByIdAndDelete(TodoId);
 
       return res.status(200).json({ messege: "Todo Deleted successfully", });

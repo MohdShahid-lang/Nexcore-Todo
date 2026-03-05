@@ -12,6 +12,6 @@ router.patch("/update-details/:todoId", updateTodoDetail);
 
 router.patch("/update-status/:todoId", updateTodoStatus);
 
-router.delete("/delete/:todoId", DeleteTodo);
+router.delete("/delete/:TodoId", DeleteTodo);
 
 export default router;
